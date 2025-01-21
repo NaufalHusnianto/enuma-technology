@@ -72,12 +72,7 @@
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
                 <a href="#" class="nav-link active" aria-current="page">
-                    <i class="bi bi-house me-2"></i> Home
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link text-white">
-                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                    <i class="bi bi-house me-2"></i> Dashboard
                 </a>
             </li>
             <li>
@@ -105,13 +100,14 @@
     <!-- Header -->
     <div class="header" id="header">
         <div class="container">
-            <header class="d-flex flex-wrap align-items-center gap-4 py-3 px-3 mb-4 border-bottom">
+            <header class="d-flex flex-wrap align-items-center justify-content-between gap-4 py-3 px-3 mb-4 border-bottom">
                 <div id="menuBtn" class="border-0" style="cursor: pointer;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 </div>
-                <a href="/admin" class="d-flex align-items-center mb-2 mb-md-0 text-body-emphasis text-decoration-none">
+                <a href="<?= base_url('admin') ?>" class="d-flex align-items-center mb-2 mb-md-0 text-body-emphasis text-decoration-none">
                     <span class="fs-4">Dashboard</span>
                 </a>
+                <a href="<?= base_url('admin/logout') ?>" class="btn btn-danger">Logout</a>
             </header>
         </div>
 

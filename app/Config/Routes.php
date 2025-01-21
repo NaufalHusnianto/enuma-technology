@@ -8,6 +8,11 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/', 'Home::index');
 
-$routes->group('admin', static function (RouteCollection $routes) {
+// AUTH
+$routes->get('admin/login', 'Auth::login');
+$routes->post('admin/processLogin', 'Auth::processLogin');
+$routes->get('admin/logout', 'Auth::logout');
+
+$routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->get('/', 'Admin::index');
 });
