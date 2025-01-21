@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The small framework with powerful features">
     <title>Enuma Technology</title>
-    <link rel="shortcut icon" type="image/png" href="/enumatech.png">
+    <link rel="shortcut icon" type="image/png" href="<?= base_url("/img/enumatech.png") ?>">
 
     <!-- Bootstrap CSS -->
     <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
