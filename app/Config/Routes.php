@@ -24,4 +24,7 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->get('admin-users/edit/(:segment)', 'User::edit/$1');
     $routes->post('admin-users/update/(:segment)', 'User::update/$1');
     $routes->get('admin-users/delete/(:segment)', 'User::delete/$1');
+
+    $routes->get('profile', 'Auth::edit');
+    $routes->post('profile/update', 'Auth::update');
 });

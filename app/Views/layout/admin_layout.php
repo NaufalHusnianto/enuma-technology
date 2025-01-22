@@ -114,7 +114,15 @@
                 <a href="<?= base_url('admin') ?>" class="d-flex align-items-center mb-2 mb-md-0 text-body-emphasis text-decoration-none">
                     <span class="fs-6"><?= $title ?></span>
                 </a>
-                <a href="<?= base_url('admin/logout') ?>" class="btn btn-sm btn-danger">Logout</a>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?= session()->get('email') ?>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="<?= base_url('admin/profile') ?>">Profile</a></li>
+                        <li><a href="<?= base_url('admin/logout') ?>" class="dropdown-item">Logout</a></li>
+                    </ul>
+                </div>
             </header>
         </div>
 
