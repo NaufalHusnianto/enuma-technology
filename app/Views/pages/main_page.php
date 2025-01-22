@@ -33,16 +33,16 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="https://enumatechnology.com/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://enumatechnology.com/http://enumatechnology.com/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="https://enumatechnology.com/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="https://enumatechnology.com/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="https://enumatechnology.com/assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="https://enumatechnology.com/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="https://enumatechnology.com/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="venobox/venobox.min.css" type="text/css" media="screen">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="https://enumatechnology.com/assets/css/style.css" rel="stylesheet">
+  <link href=css/style.css rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Arsha - v2.3.1
