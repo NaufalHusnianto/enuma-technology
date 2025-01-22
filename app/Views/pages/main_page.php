@@ -332,32 +332,26 @@
     <section id="cliens" class="cliens section-bg">
       <div class="container">
         OUR CLIENT
-        <div class="row aos-init aos-animate" data-aos="zoom-in">
+        <div class="row aos-init aos-animate justify-content-center" data-aos="zoom-in">
         
-
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="https://tiga-putra-gemilang.com/gallery_gen/dd0875788f3c93f22e4511689bf8f00a_150x90.png" class="img-fluid" alt="">
-          </div>
-
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
             <img src="https://enumatechnology.com/gambar/pasartiket.png" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="https://enumatechnology.com/gambar/citilinkcorner.png" class="img-fluid" alt="">
+            <a href="https://citikorner.com">
+              <img src="https://enumatechnology.com/gambar/citilinkcorner.png" class="img-fluid" alt="">
+            </a>
           </div>
           
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="https://enumatechnology.com/gambar/sater.png" class="img-fluid" alt="">
+            <a href="https://sman1teras.sch.id">
+              <img src="https://enumatechnology.com/gambar/sater.png" class="img-fluid" alt="">
+            </a>
           </div>
           
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
             <img src="https://upload.wikimedia.org/wikipedia/id/c/c6/Fkip.jpg" class="img-fluid" alt="">
-          </div>
-
-          <div style="visibility : hidden" class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="https://enumatechnology.com/assets/img/clients/client-5.png" class="img-fluid" alt="">
           </div>
 
         </div>
@@ -983,8 +977,8 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx--chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#">Tentang Kami</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#">Jasa</a></li>
+              <li><i class="bx--chevron-right"></i> <a href="#about">Tentang Kami</a></li>
+              <li><i class="bx--chevron-right"></i> <a href="#services">Jasa</a></li>
               <li><i class="bx--chevron-right"></i> <a href="#">Kebijakan Layanan</a></li>
               <li><i class="bx--chevron-right"></i> <a href="#">Kebijakan Privasi</a></li>
             </ul>
