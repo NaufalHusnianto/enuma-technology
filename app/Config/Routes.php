@@ -17,5 +17,11 @@ $routes->get('admin/logout', 'Auth::logout');
 $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->get('/', 'Admin::index');
     $routes->get('news', 'News::index');
+
     $routes->get('admin-users', 'User::index');
+    $routes->get('admin-users/create', 'User::create');
+    $routes->post('admin-users/store', 'User::store');
+    $routes->get('admin-users/edit/(:segment)', 'User::edit/$1');
+    $routes->post('admin-users/update/(:segment)', 'User::update/$1');
+    $routes->get('admin-users/delete/(:segment)', 'User::delete/$1');
 });
