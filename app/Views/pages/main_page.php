@@ -27,7 +27,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-  <link href="img/icon/apple-icon.png" rel="apple-touch-icon">
+  <link href="<?= base_url('img/icon/apple-icon.png')?>" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -268,9 +268,9 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <img src="img/icon/enumatech-full.png" style="width : 12vw;"><h1 class="logo mr-auto" style="visibility : hidden"><a href="#">Enumatech</a></h1>
+      <img src="<?= base_url('img/icon/enumatech-full.png') ?>" style="width : 12vw;"><h1 class="logo mr-auto" style="visibility : hidden"><a href="#">Enumatech</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo mr-auto"><img src="img/icon/enumatech.png" alt="" class="img-fluid"></a>-->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="<?= base_url('img/icon/enumatech.png') ?>" alt="" class="img-fluid"></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
@@ -319,7 +319,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-          <img src="img/hero-img.png" class="img-fluid animated" alt="">
+          <img src="<?= base_url('img/hero-img.png') ?>" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
