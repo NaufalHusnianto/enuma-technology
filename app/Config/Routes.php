@@ -17,6 +17,7 @@ $routes->get('admin/logout', 'Auth::logout');
 $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->get('/', 'Admin::index');
 
+    // NEWS
     $routes->get('news', 'News::index');
     $routes->get('news/show/(:segment)', 'News::show/$1');
     $routes->get('news/create', 'News::create');
@@ -25,6 +26,14 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->post('news/update/(:segment)', 'News::update/$1');
     $routes->get('news/delete/(:segment)', 'News::delete/$1');
 
+    // CLIENTS
+    $routes->get('clients', 'Clients::index');
+    $routes->get('clients/create', 'Clients::create');
+    $routes->post('clients/store', 'Clients::store');
+    $routes->get('clients/edit/(:segment)', 'Clients::edit/$1');
+    $routes->get('clients/delete/(:segment)', 'News::delete/$1');
+
+    // USERS
     $routes->get('admin-users', 'User::index');
     $routes->get('admin-users/create', 'User::create');
     $routes->post('admin-users/store', 'User::store');
@@ -32,9 +41,11 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->post('admin-users/update/(:segment)', 'User::update/$1');
     $routes->get('admin-users/delete/(:segment)', 'User::delete/$1');
 
+    // CONTACT
     $routes->get('contacts', 'Contact::index');
     $routes->get('contact/delete/(:segment)', 'Contact::delete/$1');
 
+    // PROFILE
     $routes->get('profile', 'Auth::edit');
     $routes->post('profile/update', 'Auth::update');
 });

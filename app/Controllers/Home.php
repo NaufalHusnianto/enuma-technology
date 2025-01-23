@@ -2,10 +2,26 @@
 
 namespace App\Controllers;
 
+use App\Models\ClientsModel;
+
 class Home extends BaseController
 {
-    public function index(): string
+    protected $clientsModel;
+
+    function __construct()
     {
-        return view('pages/main_page');
+        $this->clientsModel = new ClientsModel();
+    }
+
+    public function index(): string
+    {       
+        $clients = $this->clientsModel
+            ->orderBy('created_at', 'ASC')
+            ->findAll();
+        
+        $data = [
+            'clients' => $clients
+        ];    
+        return view('pages/main_page', $data);
     }
 }
