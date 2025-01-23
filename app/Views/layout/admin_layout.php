@@ -9,12 +9,12 @@
         <?= $title ?>
         | Admin
     </title>
-    <link rel="shortcut icon" type="image/png" href="<?= base_url('/img/enumatech.png') ?>">
+    <link rel="shortcut icon" type="image/png" href="<?= base_url('/img/icon/enumatech.png') ?>">
 
     <!-- Bootstrap CSS -->
     <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script src="<?= base_url('js/ckeditor.js') ?>"></script>
 
     <style>
         /* Apply Source Sans Pro to the entire page */
@@ -69,7 +69,7 @@
     <!-- Sidebar -->
     <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-bg-dark shadow-lg" id="sidebar" style="width: 240px;">
         <a href="/" class="d-flex align-items-center gap-3 mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <img src="<?= base_url('/img/enumatech.png') ?>" alt="Enuma Technology" width="32" height="32">
+            <img src="<?= base_url('/img/icon/enumatech.png') ?>" alt="Enuma Technology" width="32" height="32">
             <span class="fs-6">Enuma Technology</span>
         </a>
         <hr>

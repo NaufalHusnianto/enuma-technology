@@ -18,6 +18,7 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->get('/', 'Admin::index');
 
     $routes->get('news', 'News::index');
+    $routes->get('news/show/(:segment)', 'News::show/$1');
     $routes->get('news/create', 'News::create');
     $routes->post('news/store', 'News::store');
 
@@ -34,3 +35,8 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->get('profile', 'Auth::edit');
     $routes->post('profile/update', 'Auth::update');
 });
+
+// File Uploads (General)
+$routes->post('upload/image', 'News::uploadToTemp', ['as' => 'upload.image']);
+$routes->get('temp-image-preview', 'News::previewTempImage', ['as' => 'temp.image.preview']);
+
