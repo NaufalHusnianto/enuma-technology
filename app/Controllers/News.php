@@ -163,4 +163,106 @@ class News extends BaseController
 
         return $this->response->setJSON(['status' => 'success', 'message' => 'Temp images cleared']);
     }
+
+
+
+    public function edit($id)
+    {
+        $newsModel = new NewsModel();
+        $news = $newsModel->find($id);
+
+        if (!$news) {
+            return redirect()->to('/admin/news')->with('error', 'News not found.');
+        }
+
+        $data = [
+            'title' => 'Edit News',
+            'news' => $news,
+        ];
+
+        return view('pages/admin/news/edit', $data);
+    }
+
+    public function update($id)
+    {
+        $newsModel = new NewsModel();
+        $news = $newsModel->find($id);
+
+        if (!$news) {
+            return redirect()->back()->with('errors', ['News not found.']);
+        }
+
+        $validation = $this->validate([
+            'title' => 'required|max_length[255]',
+            'description' => 'required',
+            'content' => 'required',
+        ]);
+
+        if (!$validation) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $newContent = $this->request->getPost('content');
+        $data = [
+            'title' => $this->request->getPost('title'),
+            'description' => $this->request->getPost('description'),
+            'content' => $newContent,
+        ];
+
+        $oldContentImages = $this->extractImages($news['content']);
+        $newContentImages = $this->extractImages($newContent);
+
+        $unusedImages = array_diff($oldContentImages, $newContentImages);
+        foreach ($unusedImages as $image) {
+            $imagePath = WRITEPATH . '../public/uploads/news/' . $image;
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+
+        $newsModel->update($id, $data);
+
+        return redirect()->to(base_url('admin/news'))->with('success', 'News updated successfully.');
+    }
+
+    private function extractImages($content)
+    {
+        $images = [];
+        if (preg_match_all('/<img[^>]+src="([^"]+)"/', $content, $matches)) {
+            foreach ($matches[1] as $url) {
+                $path = parse_url($url, PHP_URL_PATH);
+                $images[] = basename($path);
+            }
+        }
+        return $images;
+    }
+
+    public function delete($id)
+    {
+        $newsModel = new NewsModel();
+        $news = $newsModel->find($id);
+
+        if (!$news) {
+            return redirect()->back()->with('errors', ['News not found.']);
+        }
+
+        if (!empty($news['image_url'])) {
+            $mainImagePath = WRITEPATH . '../public/uploads/news/' . $news['image_url'];
+            if (file_exists($mainImagePath)) {
+                unlink($mainImagePath);
+            }
+        }
+
+        $contentImages = $this->extractImages($news['content']);
+        foreach ($contentImages as $image) {
+            $imagePath = WRITEPATH . '../public/uploads/news/' . $image;
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+
+        $newsModel->delete($id);
+
+        return redirect()->to(base_url('admin/news'))->with('success', 'News deleted successfully.');
+    }
 }

@@ -15,10 +15,10 @@
 </div>
 <div class="card shadow">
     <div class="table-responsive small card-body">
-    <table class="table">
+        <table class="table table-striped table-sm">
         <thead>
             <tr>
-                <th>#</th>
+                <th>Id</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th>Published At</th>
@@ -35,7 +35,9 @@
                     <td>
                         <div class="d-flex gap-1">
                             <a href="<?= base_url('admin/news/show/' . $berita['id']); ?>" class="btn btn-info">Detail</a>
-                            <a href="<?= base_url('admin/news/delete/' . $berita['id']); ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus berita ini?')">Hapus</a>
+                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="<?= $berita['id']; ?>" data-title="<?= esc($berita['title']); ?>">
+                                Hapus
+                            </button>
                         </div>
                     </td>
                 </tr>
@@ -44,4 +46,42 @@
     </table>
     </div>
 </div>
+
+<!-- Modal Delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Apakah Anda yakin ingin menghapus berita ini?</p>
+                <strong id="newsTitle"></strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <a id="confirmDeleteButton" href="#" class="btn btn-danger">Hapus</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteModal = document.getElementById('deleteModal');
+        const confirmDeleteButton = document.getElementById('confirmDeleteButton');
+        const newsTitle = document.getElementById('newsTitle');
+
+        deleteModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const newsId = button.getAttribute('data-id');
+            const title = button.getAttribute('data-title');
+
+            confirmDeleteButton.href = `<?= base_url('admin/news/delete'); ?>/${newsId}`;
+
+            newsTitle.textContent = title;
+        });
+    });
+</script>
 <?= $this->endSection(); ?>

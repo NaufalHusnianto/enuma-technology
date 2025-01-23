@@ -21,6 +21,9 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->get('news/show/(:segment)', 'News::show/$1');
     $routes->get('news/create', 'News::create');
     $routes->post('news/store', 'News::store');
+    $routes->get('news/edit/(:segment)', 'News::edit/$1');
+    $routes->post('news/update/(:segment)', 'News::update/$1');
+    $routes->get('news/delete/(:segment)', 'News::delete/$1');
 
     $routes->get('admin-users', 'User::index');
     $routes->get('admin-users/create', 'User::create');

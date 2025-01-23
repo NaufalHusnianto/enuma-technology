@@ -11,6 +11,7 @@
     <?php endif; ?>
 
     <form action="<?= base_url('admin/news/store'); ?>" method="post" enctype="multipart/form-data" class="card-body">
+        <?= csrf_field(); ?>
         <div class="form-group">
             <label for="title">News Title</label>
             <input type="text" class="form-control" id="title" name="title" value="<?= old('title'); ?>" required>
