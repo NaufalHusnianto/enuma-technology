@@ -13,8 +13,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
     <style>
         /* Apply Source Sans Pro to the entire page */
