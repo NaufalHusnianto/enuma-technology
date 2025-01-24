@@ -58,7 +58,7 @@
   </div>
 </section><!-- End About Us Section -->
 
-<div class="album py-5 bg-body-tertiary" style="background-color: #f3f5fa;">
+<section class="album py-5 bg-body-tertiary" style="background-color: #f3f5fa;" id="news">
     <div class="container">
       <div class="section-title">
         <h2>Berita Terkini</h2>
@@ -81,7 +81,7 @@
             <?php endforeach; ?>
         </div>
     </div>
-</div>
+</section>
 
  <!-- ======= Services Section ======= -->
  <section id="services" class="services">

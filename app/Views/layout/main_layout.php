@@ -282,10 +282,11 @@
         <ul>
           <li class="active"><a href="#hero">Home</a></li>
           <li class=""><a href="#about">Tentang Kami</a></li>
+          <li class=""><a href="#news">Berita</a></li>
           <li class=""><a href="#services">Jasa</a></li>
           <li class=""><a href="#portfolio">Portfolio</a></li>
           <li class=""><a href="#contact">Kontak</a></li>
-          <li class=""><a href="<?= base_url('news') ?>">News</a></li>
+          <li class=""><a href="<?= base_url('news') ?>">Semua Berita</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -385,6 +386,7 @@
         <ul>
           <li class="active"><a href="/">Home</a></li>
           <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#news">Berita</a></li>
           <li><a href="#services">Jasa</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Tim</a></li>
