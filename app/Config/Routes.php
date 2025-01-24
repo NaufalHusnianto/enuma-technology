@@ -32,7 +32,8 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->get('clients/create', 'Clients::create');
     $routes->post('clients/store', 'Clients::store');
     $routes->get('clients/edit/(:segment)', 'Clients::edit/$1');
-    $routes->get('clients/delete/(:segment)', 'News::delete/$1');
+    $routes->post('clients/update/(:segment)', 'Clients::update/$1');
+    $routes->get('clients/delete/(:segment)', 'Clients::delete/$1');
 
     // USERS
     $routes->get('admin-users', 'User::index');
