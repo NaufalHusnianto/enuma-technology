@@ -35,6 +35,14 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->post('clients/update/(:segment)', 'Clients::update/$1');
     $routes->get('clients/delete/(:segment)', 'Clients::delete/$1');
 
+    // PORTFOLIO
+    $routes->get('portfolios', 'Portfolio::index');
+    $routes->get('portfolios/create', 'Portfolio::create');
+    $routes->post('portfolios/store', 'Portfolio::store');
+    $routes->get('portfolios/edit/(:segment)', 'Portfolio::edit/$1');
+    $routes->post('portfolios/update/(:segment)', 'Portfolio::update/$1');
+    $routes->get('portfolios/delete/(:segment)', 'Portfolio::delete/$1');
+
     // USERS
     $routes->get('admin-users', 'User::index');
     $routes->get('admin-users/create', 'User::create');
