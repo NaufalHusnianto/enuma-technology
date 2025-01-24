@@ -94,6 +94,20 @@
                 </a>
             </li>
             <li>
+                <a href="<?= base_url('admin/clients') ?>" 
+                class="nav-link d-flex align-items-center gap-2 <?= ($uri->getSegment(1) == 'admin' && $uri->getSegment(2) == 'clients') ? 'active' : 'text-white' ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                    Clients
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('admin/portfolios') ?>" 
+                class="nav-link d-flex align-items-center gap-2 <?= ($uri->getSegment(1) == 'admin' && $uri->getSegment(2) == 'portfolios') ? 'active' : 'text-white' ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    portfolios
+                </a>
+            </li>
+            <li>
                 <a href="<?= base_url('admin/contacts') ?>" 
                 class="nav-link d-flex align-items-center gap-2 <?= ($uri->getSegment(1) == 'admin' && $uri->getSegment(2) == 'contacts') ? 'active' : 'text-white' ?>">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>                    

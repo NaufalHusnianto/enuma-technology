@@ -85,21 +85,18 @@ class Clients extends BaseController
 
         public function update($id)
     {
-        // Find the client by ID
         $client = $this->clientModel->find($id);
         if (!$client) {
             return redirect()->to('/admin/clients')->with('error', 'Client not found.');
         }
 
         $imageFile = $this->request->getFile('image');
-        $imageName = $client['image']; // Retain the old image name by default
+        $imageName = $client['image'];
 
         if ($imageFile->isValid() && !$imageFile->hasMoved()) {
-            // Generate a new random name for the uploaded image
             $newImageName = $imageFile->getRandomName();
             $imageFile->move('uploads/clients', $newImageName);
 
-            // Delete the old image if it exists
             if (!empty($client['image'])) {
                 $oldImagePath = 'uploads/clients/' . $client['image'];
                 if (file_exists($oldImagePath)) {
@@ -107,11 +104,9 @@ class Clients extends BaseController
                 }
             }
 
-            // Update the image name with the new one
             $imageName = $newImageName;
         }
 
-        // Prepare the data for updating the client
         $data = [
             'name' => $this->request->getPost('name'),
             'link' => $this->request->getPost('link'),
@@ -119,7 +114,6 @@ class Clients extends BaseController
             'updated_at' => date('Y-m-d H:i:s'),
         ];
 
-        // Update the client record in the database
         if ($this->clientModel->update($id, $data)) {
             return redirect()->to('/admin/clients')->with('success', 'Client updated successfully.');
         } else {
