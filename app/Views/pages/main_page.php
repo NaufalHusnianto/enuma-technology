@@ -1,132 +1,137 @@
 <?= $this->extend('layout/main_layout'); ?>
 
 <?= $this->section('content'); ?>
+<div id="newsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <?php $isActive = true; ?>
+        <?php foreach ($news as $item): ?>
+            <div class="carousel-item <?= $isActive ? 'active' : ''; ?>">
+                <img src="<?= base_url('uploads/news/' . esc($item['image_url'])); ?>" style="width: 100%; object-fit: cover; height: 500px; filter: brightness(0.6);" alt="<?= esc($item['title']); ?>">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><?= esc($item['title']); ?></h5>
+                    <p><?= esc($item['description']); ?></p>
+                    <a href="/<?= esc($item['id']); ?>" class="btn btn-primary">Selengkapnya</a>
+                </div>
+            </div>
+            <?php $isActive = false; ?>
+        <?php endforeach; ?>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"></span>
+    </button>
+</div>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+<!-- ======= About Us Section ======= -->
+<section id="about" class="about">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-          <h1>Solusi Masa Depan Pengembangan Produk IT</h1>
-          <h2>Kami terdiri dari teknisi handal yang siap membantu mewujudkan produk IT impian anda</h2>
-          <div class="d-lg-flex">
-            <a href="#about" class="btn-get-started scrollto">Mulai Tur</a>
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox btn-watch-video vbox-item" data-vbtype="video" data-autoplay="true">Lihat Video<i class="icofont-play-alt-2"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-          <img src="<?= base_url('img/hero-img.png') ?>" class="img-fluid animated" alt="">
-        </div>
+    <div class="section-title">
+      <h2>Tentang Kami</h2>
+    </div>
+
+    <div class="row content">
+      <div class="col-lg-6">
+        <p>
+          Enuma Technology merupakan sebuah perusahaan yang bergerak di bidang teknologi informasi dengan menyediakan jasa perancangan, pengelolaan, pengembangan dan penelitian terkait IT. Adapun cakupan jasa kami meliputi di bawah ini :  
+        </p>
+        <ul>
+          <li><i class="ri--check-double-line"></i>Internet of Things</li>
+          <li><i class="ri--check-double-line"></i>Multimedia : Desain grafis dan animasi</li>
+          <li><i class="ri--check-double-line"></i>Pengembangan Aplikasi Android</li>
+          <li><i class="ri--check-double-line"></i>Pengembangan Game</li>
+          <li><i class="ri--check-double-line"></i>Sistemasi Robotika</li>
+        </ul>
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0">
+        <p>
+          Tim kami terdiri dari berbagai macam bidang IT mulai dari multimedia, jaringan, pemrograman, dan robotika. Kombinasi dari keempat bidang tersebut membuat perusahaan kami siap untuk membantu anda mewujudkan produk impian anda. Mulai dari perancangan hingga pada pengelolaan produk dapat anda serahkan kepada kami
+        </p>
+        <a href="https://enumatechnology.com/about.html" class="btn-learn-more">Pelajari lanjut</a>
       </div>
     </div>
 
-  </section><!-- End Hero -->
+  </div>
+</section><!-- End About Us Section -->
 
-  <main id="main">
-
-    <!-- ======= Cliens Section ======= -->
-    <section id="cliens" class="cliens section-bg">
-      <div class="container">
-        OUR CLIENT
-        <div class="row aos-init aos-animate justify-content-center" data-aos="zoom-in">
-        
-        <?php foreach($clients as $client) : ?>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <a href="<?= $client['link'] ?>">
-              <img src="<?= base_url('uploads/clients/'.$client['image']) ?>" class="img-fluid" alt="">
-            </a>
-          </div>
-
-        <?php endforeach; ?>
-
-        </div>
-
+<div class="album py-5 bg-body-tertiary" style="background-color: #f3f5fa;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Berita Terkini</h2>
       </div>
-    </section><!-- End Cliens Section -->
-
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container aos-init aos-animate" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Tentang Kami</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <?php foreach ($news as $item): ?>
+                <div class="col">
+                    <div class="card shadow-sm h-100">
+                        <img src="<?= base_url('uploads/news/' . esc($item['image_url'])); ?>" class="card-img-top" alt="<?= esc($item['title']); ?>" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><?= esc($item['title']); ?></h5>
+                            <p class="card-text flex-grow-1"><?= esc(substr($item['description'], 0, 100)); ?>...</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="/<?= esc($item['id']); ?>" class="btn btn-sm btn-primary">Selengkapnya</a>
+                                <small class="text-body-secondary"><?= date('d M Y', strtotime($item['created_at'])); ?></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
+    </div>
+</div>
 
-        <div class="row content">
-          <div class="col-lg-6">
-            <p>
-              Enuma Technology merupakan sebuah perusahaan yang bergerak di bidang teknologi informasi dengan menyediakan jasa perancangan, pengelolaan, pengembangan dan penelitian terkait IT. Adapun cakupan jasa kami meliputi di bawah ini :  
-            </p>
-            <ul>
-              <li><i class="ri--check-double-line"></i>Internet of Things</li>
-              <li><i class="ri--check-double-line"></i>Multimedia : Desain grafis dan animasi</li>
-              <li><i class="ri--check-double-line"></i>Pengembangan Aplikasi Android</li>
-              <li><i class="ri--check-double-line"></i>Pengembangan Game</li>
-              <li><i class="ri--check-double-line"></i>Sistemasi Robotika</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Tim kami terdiri dari berbagai macam bidang IT mulai dari multimedia, jaringan, pemrograman, dan robotika. Kombinasi dari keempat bidang tersebut membuat perusahaan kami siap untuk membantu anda mewujudkan produk impian anda. Mulai dari perancangan hingga pada pengelolaan produk dapat anda serahkan kepada kami
-            </p>
-            <a href="https://enumatechnology.com/about.html" class="btn-learn-more">Pelajari lanjut</a>
-          </div>
+ <!-- ======= Services Section ======= -->
+ <section id="services" class="services">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Jasa Kami</h2>
+      <p>Kami menawarkan 4 jenis jasa yang dapat memfasilitasi terwujudnya produk impian anda</p>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box">
+          <div class="icon"><i class="bxl--dribbble"></i></div>
+          <h4><a href="">Konsultasi IT</a></h4>
+          <p>Menyediakan layanan konsultasi 24 jam terkait dengan IT</p>
         </div>
-
       </div>
-    </section><!-- End About Us Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container aos-init aos-animate" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Jasa Kami</h2>
-          <p>Kami menawarkan 4 jenis jasa yang dapat memfasilitasi terwujudnya produk impian anda</p>
+      <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-box">
+          <div class="icon"><i class="bx--file"></i></div>
+          <h4><a href="">Perancangan Sistem</a></h4>
+          <p>Punya ide untuk membuat sebuah sistem yang kompleks namun terkendala perancangan ? serahkan kepada kami untuk masalah perancangan sistem</p>
         </div>
-
-        <div class="row">
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bxl--dribbble"></i></div>
-              <h4><a href="">Konsultasi IT</a></h4>
-              <p>Menyediakan layanan konsultasi 24 jam terkait dengan IT</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bx--file"></i></div>
-              <h4><a href="">Perancangan Sistem</a></h4>
-              <p>Punya ide untuk membuat sebuah sistem yang kompleks namun terkendala perancangan ? serahkan kepada kami untuk masalah perancangan sistem</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx--tachometer"></i></div>
-              <h4><a href="">Pengembangan Produk</a></h4>
-              <p>Berikan rancangan anda, maka akan kami kembangkan produk impian anda</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
-            <div class="icon-box">
-              <div class="icon"><i class="bx--layer"></i></div>
-              <h4><a href="">Pengelolaan Produk</a></h4>
-              <p>Pengelolaan produk meliputi perawatan, peningkatan, dan pemeliharaan</p>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-    </section><!-- End Services Section -->
+
+      <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+        <div class="icon-box">
+          <div class="icon"><i class="bx--tachometer"></i></div>
+          <h4><a href="">Pengembangan Produk</a></h4>
+          <p>Berikan rancangan anda, maka akan kami kembangkan produk impian anda</p>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+        <div class="icon-box">
+          <div class="icon"><i class="bx--layer"></i></div>
+          <h4><a href="">Pengelolaan Produk</a></h4>
+          <p>Pengelolaan produk meliputi perawatan, peningkatan, dan pemeliharaan</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio section-bg">
       <div class="container aos-init aos-animate" data-aos="fade-up">
 
         <div class="section-title">
@@ -341,36 +346,36 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="name">Nama Anda</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                  <div class="validate"></div>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Email Anda</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email">
-                  <div class="validate"></div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Judul Pesan</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+            <form id="contactForm" action="<?= base_url('contact'); ?>" method="post" role="form" class="php-email-form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="name">Nama Anda</label>
+                <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validate"></div>
               </div>
-              <div class="form-group">
-                <label for="name">Pesan</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+              <div class="form-group col-md-6">
+                <label for="name">Email Anda</label>
+                <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email">
                 <div class="validate"></div>
               </div>
-              <div class="mb-3">
-                <div class="loading">Memuat</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Pesan anda telah terkirim</div>
-              </div>
-              <div class="text-center"><button type="submit">Kirim Pesan</button></div>
-            </form>
+            </div>
+            <div class="form-group">
+              <label for="name">Judul Pesan</label>
+              <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <label for="name">Pesan</label>
+              <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+              <div class="validate"></div>
+            </div>
+            <div class="mb-3">
+              <div class="loading">Memuat</div>
+              <div class="sent-message">Pesan anda telah terkirim</div>
+            </div>
+            <div class="text-center"><button type="submit">Kirim Pesan</button></div>
+          </form>
+
           </div>
 
         </div>
@@ -378,6 +383,41 @@
       </div>
     </section><!-- End Contact Section -->
 
-  </main><!-- End #main -->
 
-  <?= $this->endSection('content'); ?>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactForm');
+    const successMessage = document.querySelector('.sent-message');
+    const loadingMessage = document.querySelector('.loading');
+    
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      loadingMessage.style.display = 'block';
+      successMessage.style.display = 'none';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          successMessage.style.display = 'block';
+        } else {
+          alert('Terjadi kesalahan, coba lagi nanti.');
+        }
+      })
+      .catch(() => {
+        alert('Terjadi kesalahan dalam pengiriman data.');
+      })
+      .finally(() => {
+        loadingMessage.style.display = 'none';
+        form.reset();
+      });
+    });
+  });
+</script>
+
+
+<?= $this->endSection('content'); ?>

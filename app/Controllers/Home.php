@@ -19,9 +19,12 @@ class Home extends BaseController
         $clients = $this->clientsModel
             ->orderBy('created_at', 'ASC')
             ->findAll();
+
+        $newsModel = new NewsModel();
         
         $data = [
-            'clients' => $clients
+            'clients' => $clients,
+            'news' => $newsModel->orderBy('created_at', 'DESC')->limit(6)->findAll(),
         ];    
         return view('pages/main_page', $data);
     }
@@ -31,8 +34,7 @@ class Home extends BaseController
         $newsModel = new NewsModel();
 
         $data = [
-            'news' => $newsModel->findAll(),
-            'title' => 'News'
+            'news' => $newsModel->orderBy('created_at', 'DESC')->limit(6)->findAll(),
         ];
 
         return view('pages/news_page', $data);
@@ -44,9 +46,8 @@ class Home extends BaseController
 
         $data = [
             'news' => $newsModel->find($id),
-            'title' => 'News'
         ];
 
-        return view('pages/detail_news', $data);
+        return view('pages/detail_news_page', $data);
     }
 }
