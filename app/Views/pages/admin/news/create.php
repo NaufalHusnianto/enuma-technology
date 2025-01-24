@@ -10,7 +10,7 @@
         </div>
     <?php endif; ?>
 
-    <form action="<?= base_url('admin/news/store'); ?>" method="post" enctype="multipart/form-data" class="card-body">
+    <form action="<?= base_url('admin/client/store'); ?>" method="post" enctype="multipart/form-data" class="card-body">
         <?= csrf_field(); ?>
         <div class="form-group">
             <label for="title">News Title</label>
