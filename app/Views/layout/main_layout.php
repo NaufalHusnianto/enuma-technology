@@ -9,6 +9,8 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <link rel="shortcut icon" type="image/png" href="<?= base_url('/img/icon/enumatech.png') ?>">
+
   <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="fav/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="fav/apple-icon-60x60.png">
@@ -260,9 +262,10 @@
       mask-size: 100% 100%;
     }
       </style>
-<style type="text/css" id="operaUserStyle"></style></head>
+<style type="text/css" id="operaUserStyle"></style>
+</head>
 
-<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0"><button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
+<sc data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0"><button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -278,25 +281,8 @@
           <li class=""><a href="#about">Tentang Kami</a></li>
           <li class=""><a href="#services">Jasa</a></li>
           <li class=""><a href="#portfolio">Portfolio</a></li>
-          <li class="drop-down"><a href="" style="display : none">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
           <li class=""><a href="#contact">Kontak</a></li>
-
+          <li class=""><a href="<?= base_url('news') ?>">News</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -309,20 +295,6 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Bergabung bersama newsletter kami</h4>
-            <p>Biar tetep update dengan informasi seputar enumatechnology, yuk langganan newsleter enumatech</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="footer-top">
       <div class="container">
@@ -414,28 +386,11 @@
           <li><a href="#services">Jasa</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Tim</a></li>
-          <li class="drop-down"><a href="" style="display : none">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
           <li><a href="#contact">Kontak</a></li>
 
         </ul>
       </nav><div class="mobile-nav-overly"></div>
-
+</script>
 </body>
 
 </html>

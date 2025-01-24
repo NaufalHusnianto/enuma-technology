@@ -6,8 +6,9 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+//  MAIN PAGE
 $routes->get('/', 'Home::index');
-$routes->get('/news', 'News::newsPage');
+$routes->get('/news', 'Home::newsPage');
 
 // AUTH
 $routes->get('admin/login', 'Auth::login');

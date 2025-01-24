@@ -124,3 +124,10 @@ nb-configuration.xml
 
 /results/
 /phpunit*.xml
+
+#-------------------------
+# Uploads Folder
+#-------------------------
+/public/uploads/news/*
+/public/uploads/clients/*
+!/public/upload/.gitignore

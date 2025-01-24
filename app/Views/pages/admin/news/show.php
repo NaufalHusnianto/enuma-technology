@@ -1,5 +1,15 @@
 <?= $this->extend('layout/admin_layout'); ?>
 
+<?php 
+function parse_oembed_content($content) {
+    return preg_replace_callback('/<oembed url="([^"]+)"><\/oembed>/', function ($matches) {
+        $url = $matches[1];
+
+        return '<iframe width="560" height="315" src="' . str_replace('youtu.be/', 'www.youtube.com/embed/', $url) . '" frameborder="0" allowfullscreen></iframe>';
+    }, $content);
+}
+?>
+
 <?= $this->section('content'); ?>
 <div class="container">
     <div class="d-flex justify-content-start gap-2 align-items-center">
@@ -22,9 +32,10 @@
                 <?php endif; ?>
 
                 <!-- Content Berita -->
-                <div class="content text-dark">
-                    <?= $news['content']; ?>
+                <div class="content text-dark styled-content">
+                    <?= parse_oembed_content($news['content']); ?>
                 </div>
+
 
                 <!-- Tanggal Berita -->
                 <div class="text-muted mt-4">

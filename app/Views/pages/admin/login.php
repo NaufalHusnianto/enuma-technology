@@ -5,7 +5,7 @@
     <title>Enuma Technology - Admin</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="<?= base_url('/img/enumatech.png')?>">
+    <link rel="shortcut icon" type="image/png" href="<?= base_url('/img/icon/enumatech.png')?>">
 
     <!-- Bootstrap CSS -->
     <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -23,7 +23,7 @@
         <div class="card shadow-lg w-100" style="max-width: 400px;">
             <div class="card-header text-white" style="background-color: #37517e;">
                 <div class="d-flex align-items-center p-2 gap-4">
-                    <img src="<?= base_url('/img/enumatech.png') ?>" alt="Enuma" width="100">
+                    <img src="<?= base_url('/img/icon/enumatech.png') ?>" alt="Enuma" width="100">
                     <h1 class="fw-bold">Enuma Technology</h1>
                 </div>
             </div>
