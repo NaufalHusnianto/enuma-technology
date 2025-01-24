@@ -9,7 +9,6 @@ use CodeIgniter\Router\RouteCollection;
 //  MAIN PAGE
 $routes->get('/', 'Home::index');
 $routes->get('/news', 'Home::newsPage');
-$routes->get('/(:segment)', 'Home::detailNews/$1');
 $routes->post('/contact', 'Contact::store');
 
 // AUTH
@@ -61,6 +60,8 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
     $routes->get('profile', 'Auth::edit');
     $routes->post('profile/update', 'Auth::update');
 });
+
+$routes->get('/(:segment)', 'Home::detailNews/$1');
 
 // File Uploads (General)
 $routes->post('upload/image', 'News::uploadToTemp', ['as' => 'upload.image']);
