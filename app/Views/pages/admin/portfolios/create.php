@@ -13,23 +13,22 @@
 
     <form action="<?= base_url('admin/portfolios/store'); ?>" method="post" enctype="multipart/form-data" class="card-body">
         <?= csrf_field(); ?>
-        
         <div class="form-group">
-            <label for="title">Portfolio's Title</label>
+            <label for="title">Title</label>
             <input type="text" class="form-control" id="title" name="title" value="<?= old('title'); ?>" required>
         </div>
 
         <div class="form-group mt-2">
-            <label for="description">Portfolio's Description</label>
-            <textarea name="description" id="description" class="form-control" required><?= old('description'); ?></textarea>
+            <label for="description">Description</label>
+            <input name="description" id="description" value="<?= old('description'); ?>" class="form-control">
         </div>
 
         <div class="form-group mt-2">
-            <label for="image">Portfolio Display Image</label>
-            <input type="file" name="image" id="image" class="form-control" required>
+            <label for="image">Display Image</label>
+            <input type="file" name="image" id="image" value="<?= old('image'); ?>" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3">Add Portfolio</button>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
     </form>
 </div>
 

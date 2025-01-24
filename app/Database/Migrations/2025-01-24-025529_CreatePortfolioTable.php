@@ -10,22 +10,22 @@ class CreatePortfolioTable extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'title' => [
-                'type' => 'VARCHAR',
-                'constraint' => 100,
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
             ],
             'description' => [
-                'type' => 'TEXT',
-                'null' => true,
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
             ],
             'image' => [
                 'type' => 'VARCHAR',
-                'constraint' => 100,
+                'constraint' => '255',
                 'null' => true,
             ],
             'created_at' => [
@@ -37,13 +37,12 @@ class CreatePortfolioTable extends Migration
                 'null' => true,
             ],
         ]);
-
         $this->forge->addKey('id', true);
-        $this->forge->createTable('portfolios');
+        $this->forge->createTable('portofolios');
     }
 
     public function down()
     {
-        $this->forge->dropTable('portfolios');
+        $this->forge->dropTable('portofolios');
     }
 }

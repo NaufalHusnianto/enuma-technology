@@ -6,29 +6,41 @@ use CodeIgniter\Model;
 
 class PortfolioModel extends Model
 {
-    protected $table = 'Portfolios';
-    protected $primaryKey = 'id';
+    protected $table            = 'portfolios';
+    protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType = 'array';
-    protected $useSoftDeletes = false;
-    protected $allowedFields = ['title', 'description', 'image'];
-    protected $validationRules = [
-        'title' => 'required',
-        'description' => 'required',
-        'image' => 'required|uploaded[image]|is_image[image]|max_size[image,2048]',
-    ];
+    protected $returnType       = 'array';
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    protected $allowedFields    = ['title', 'description','image'];
 
-    protected $validationMessages = [
-        'title' => [
-            'required' => 'Title is required.',
-        ],
-        'description' => [
-            'required' => 'Description is required.',
-        ],
-        'image' => [
-            'uploaded' => 'Please upload an image.',
-            'is_image' => 'Please upload a valid image file.',
-            'max_size' => 'Image size should not exceed 10MB.',
-        ],
-    ];
+    protected bool $allowEmptyInserts = false;
+    protected bool $updateOnlyChanged = true;
+
+    protected array $casts = [];
+    protected array $castHandlers = [];
+
+    // Dates
+    protected $useTimestamps = true;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
+
+    // Validation
+    protected $validationRules      = [];
+    protected $validationMessages   = [];
+    protected $skipValidation       = false;
+    protected $cleanValidationRules = true;
+
+    // Callbacks
+    protected $allowCallbacks = true;
+    protected $beforeInsert   = [];
+    protected $afterInsert    = [];
+    protected $beforeUpdate   = [];
+    protected $afterUpdate    = [];
+    protected $beforeFind     = [];
+    protected $afterFind      = [];
+    protected $beforeDelete   = [];
+    protected $afterDelete    = [];
 }
