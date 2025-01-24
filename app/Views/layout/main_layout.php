@@ -277,18 +277,18 @@
       <img src="<?= base_url('img/icon/enumatech-full.png') ?>" style="width : 12vw;"><h1 class="logo mr-auto" style="visibility : hidden"><a href="#">Enumatech</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="<?= base_url('img/icon/enumatech.png') ?>" alt="" class="img-fluid"></a>-->
-
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#hero">Home</a></li>
-          <li class=""><a href="#about">Tentang Kami</a></li>
-          <li class=""><a href="#news">Berita</a></li>
-          <li class=""><a href="#services">Jasa</a></li>
-          <li class=""><a href="#portfolio">Portfolio</a></li>
-          <li class=""><a href="#contact">Kontak</a></li>
-          <li class=""><a href="<?= base_url('news') ?>">Semua Berita</a></li>
+          <li class="active"><a href="<?= base_url() ?>#hero">Home</a></li>
+          <li><a href="<?= base_url() ?>#about">Tentang Kami</a></li>
+          <li><a href="<?= base_url() ?>#news">Berita</a></li>
+          <li><a href="<?= base_url() ?>#services">Jasa</a></li>
+          <li><a href="<?= base_url() ?>#portfolio">Portfolio</a></li>
+          <li><a href="<?= base_url() ?>#contact">Kontak</a></li>
+          <li><a href="<?= base_url('news') ?>">Semua Berita</a></li>
         </ul>
-      </nav><!-- .nav-menu -->
+      </nav>
+
 
       <a href="#cliens" class="get-started-btn scrollto">Mulai</a>
 

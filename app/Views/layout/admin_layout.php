@@ -124,7 +124,7 @@
         </ul>
         <hr>
         <div class="d-flex justify-content-center">
-            <p class="small fw-lighter text-center">Copyright &copy; 2023 Enuma Technology</p>
+            <p class="small fw-lighter text-center">Copyright &copy; 2025 Enuma Technology</p>
         </div>
     </div>
 
