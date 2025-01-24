@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\ClientsModel;
+use App\Models\NewsModel;
+
 class Home extends BaseController
 {
     protected $clientsModel;
@@ -33,5 +36,17 @@ class Home extends BaseController
         ];
 
         return view('pages/news_page', $data);
+    }
+
+    public function detailNews($id)
+    {
+        $newsModel = new NewsModel();
+
+        $data = [
+            'news' => $newsModel->find($id),
+            'title' => 'News'
+        ];
+
+        return view('pages/detail_news', $data);
     }
 }

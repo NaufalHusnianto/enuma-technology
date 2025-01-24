@@ -9,6 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 //  MAIN PAGE
 $routes->get('/', 'Home::index');
 $routes->get('/news', 'Home::newsPage');
+$routes->get('/news/(:segment)', 'Home::detailNews/$1');
 
 // AUTH
 $routes->get('admin/login', 'Auth::login');
