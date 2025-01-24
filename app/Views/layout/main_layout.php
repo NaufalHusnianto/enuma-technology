@@ -41,10 +41,13 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="venobox/venobox.min.css" type="text/css" media="screen">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- Template Main CSS and JS File -->
   <link href=css/style.css rel="stylesheet">
+
+  <!-- Css Content News -->
+  <link href="<?= base_url('css/news-content.css') ?>" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Arsha - v2.3.1
@@ -296,7 +299,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-top">
+    <div class="footer-top" style="background-color: #f3f5fa;">
       <div class="container">
         <div class="row">
 
@@ -363,7 +366,6 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top" style="display: none;"><i class="ri--arrow-up-line"></i></a>
-  
 
   <!-- Vendor JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

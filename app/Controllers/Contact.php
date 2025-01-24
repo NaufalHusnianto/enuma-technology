@@ -22,6 +22,43 @@ class Contact extends BaseController
         return view('pages/admin/contacts/index', $data);
     }
 
+    public function store()
+    {
+        if (!$this->validate([
+            'name' => 'required',
+            'email' => 'required|valid_email',
+            'subject' => 'required',
+            'message' => 'required',
+        ])) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Gagal mengirim pesan. Pastikan semua field sudah diisi dengan benar.'
+            ]);
+        }
+    
+        $contactModel = new ContactModel();
+        $data = [
+            'name' => $this->request->getVar('name'),
+            'email' => $this->request->getVar('email'),
+            'subject' => $this->request->getVar('subject'),
+            'message' => $this->request->getVar('message'),
+            'created_at' => date('Y-m-d H:i:s'),
+        ];
+    
+        if ($contactModel->insert($data)) {
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'Pesan berhasil dikirim.'
+            ]);
+        }
+    
+        return $this->response->setJSON([
+            'success' => false,
+            'message' => 'Terjadi kesalahan saat mengirim pesan. Coba lagi nanti.'
+        ]);
+    }
+    
+
     public function delete($id)
     {
         $contactModel = new ContactModel();
