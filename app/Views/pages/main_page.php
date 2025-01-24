@@ -139,166 +139,25 @@
           <p>Puluhan produk, sistem, dan rancangan telah kami kembangkankan</p>
         </div>
 
-        <ul id="portfolio-flters" class="d-flex justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Mesin</li>
-          <li data-filter=".filter-web">Web</li>
-        </ul>
-
         <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" style="position: relative; height: 1646.83px;">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/7.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>ASTERU</h4>
-              <p>Aplikasi Animasi Pembelajaran Pancasila</p>
-              <a href="https://enumatechnology.com/7.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Aplikasi Animasi Pembelajaran Pancasila"><i class="bx--bx-plus" "=""></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
+        <?php foreach ($portfolios as $portfolio): ?>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
+            <div class="portfolio-img">
+                <img src="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" class="img-fluid" alt="<?= esc($portfolio['title']); ?>">
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 380px; top: 0px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/2.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Sol-AR</h4>
-              <p>Aplikasi augmented reality pembelajaran tata surya</p>
-              <a href="https://enumatechnology.com/2.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Aplikasi Pembelajaran Tata Surya"><i class="bx--bx-plus" "=""></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
+                <h4><?= esc($portfolio['title']); ?></h4>
+                <p><?= esc($portfolio['description']); ?></p>
+                <a href="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="<?= esc($portfolio['title']); ?>">
+                    <i class="bx bx-plus"></i>
+                </a>
+                <a href="<?= base_url('portfolio-details/' . $portfolio['id']); ?>" class="details-link" title="More Details">
+                    <i class="bx bx-link"></i>
+                </a>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 760px; top: 0px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/3.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Aplikasi PKKMB UNS 2019</h4>
-              <p>Aplikasi pegangan kegiatan PKKMB UNS 2019</p>
-              <a href="https://enumatechnology.com/3.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Aplikasi PKKMB UNS 2019"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 760px; top: 222px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/4.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>ARKLUS</h4>
-              <p>Aplikasi augmented reality untuk ABK</p>
-              <a href="https://enumatechnology.com/4.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="ARKLUS"><i class="bx--bx-plus" "=""></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 380px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/5.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Citilink Corner</h4>
-              <p>Aplikasi sistem mesin kiosk citilink corner</p>
-              <a href="https://enumatechnology.com/5.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Citilink Corner"><i class="bx--bx-plus" "=""></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 380px; top: 380px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/6.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Korsius</h4>
-              <p>Aplikasi pembelajaran koordinat kartesius</p>
-              <a href="https://enumatechnology.com/6.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Korsius"><i class="bx--bx-plus" "=""></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 760px; top: 602px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/1.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Klinik Tani</h4>
-              <p>Aplikasi konsultasi dan forum pertanian indonesia</p>
-              <a href="https://enumatechnology.com/1.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Klinik Tani"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 760px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/9.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>My Bengkel</h4>
-              <p>Aplikasi pencarian bengkel lokal solo raya</p>
-              <a href="https://enumatechnology.com/9.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="My Bengkel"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 380px; top: 760px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/13.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Si-MoBi</h4>
-              <p>Aplikasi Asisten Kelas Virtual Penyandang Tunanetra</p>
-              <a href="https://enumatechnology.com/13.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Si-MoBi"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 380px; top: 814px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/11.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Literasi</h4>
-              <p>Aplikasi pembelajaran literasi digital</p>
-              <a href="https://enumatechnology.com/11.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Literasi"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 760px; top: 982px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/10.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>SO-LA Sense Apps</h4>
-              <p>Aplikasi monitoring keadaan tunanetra</p>
-              <a href="https://enumatechnology.com/10.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="SO-LI Sense Apps"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 1140px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/8.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>R-ETA</h4>
-              <p>Aplikasi MONITORING KEADAAN TUNANETRA</p>
-              <a href="https://enumatechnology.com/8.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="R-ETA"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 380px; top: 1194px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/12.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Jawadwipa : The Legend of Ajisaka</h4>
-              <p>Game pengenalana ajisaka</p>
-              <a href="https://enumatechnology.com/12.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="R-ETA"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web" style="position: absolute; left: 760px; top: 1362px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/pasartiket.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Pasar Tiket Jogja</h4>
-              <p>Web reservasi tiket pasar tiket PT Panna Angkasa Internasional</p>
-              <a href="https://enumatechnology.com/pasartiket.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Web 3"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
-         
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="position: absolute; left: 380px; top: 1420.41px;">
-            <div class="portfolio-img"><img src="https://enumatechnology.com/gambar/23.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Mesin Kiosk Citilink Corner</h4>
-              <p>Mesin Kiosk Layanan Pelanggan</p>
-              <a href="https://enumatechnology.com/23.png" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="Mesin Kiosk Citilink Corner"><i class="bx--bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx--link"></i></a>
-            </div>
-          </div>
-
+        </div>
+        <?php endforeach; ?>
 
         </div>
 

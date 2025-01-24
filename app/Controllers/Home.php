@@ -4,14 +4,17 @@ namespace App\Controllers;
 
 use App\Models\ClientsModel;
 use App\Models\NewsModel;
+use App\Models\PortfolioModel;
 
 class Home extends BaseController
 {
     protected $clientsModel;
+    protected $portfolioModel;
 
     function __construct()
     {
         $this->clientsModel = new ClientsModel();
+        $this->portfolioModel = new PortfolioModel();
     }
 
     public function index(): string
@@ -22,9 +25,15 @@ class Home extends BaseController
 
         $newsModel = new NewsModel();
         
+        $portfolios = $this->portfolioModel
+            ->orderBy('created_at', 'DESC')
+            ->limit(3)
+            ->findAll();
+
         $data = [
             'clients' => $clients,
             'news' => $newsModel->orderBy('created_at', 'DESC')->limit(6)->findAll(),
+            'portfolios' => $portfolios,
         ];    
         return view('pages/main_page', $data);
     }
