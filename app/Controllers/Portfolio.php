@@ -21,7 +21,7 @@ class Portfolio extends BaseController
             ->findAll();
 
         $data = [
-            'title' => 'portfolios List',
+            'title' => 'Portfolio List',
             'portfolios' => $portfolios,
         ];
 
@@ -31,13 +31,13 @@ class Portfolio extends BaseController
     public function create()
     {
         $data = [
-            'title' => 'Add Portfolio',
+            'title' => 'Create Portfolio',
         ];
 
         return view('pages/admin/portfolios/create', $data);
     }
 
-        public function store()
+    public function store()
     {
         $validation = Services::validation();
 
@@ -67,7 +67,7 @@ class Portfolio extends BaseController
         ];
 
         if ($this->portfolioModel->save($data)) {
-            return redirect()->to('/admin/portfolios')->with('success', 'News created successfully.');
+            return redirect()->to('/admin/portfolios')->with('success', 'Portfolio created successfully.');
         } else {
             return redirect()->back()->withInput()->with('errors', $this->portfolioModel->errors());
         }
@@ -80,14 +80,14 @@ class Portfolio extends BaseController
             'title' => 'Edit Portfolio',
             'portfolio' => $portfolio,
         ];
-        return view('pages/admin/portfolios/edit', $data);
+        return view('pages/admin/portfolio/edit', $data);
     }
 
     public function update($id)
     {
         $portfolio = $this->portfolioModel->find($id);
         if (!$portfolio) {
-            return redirect()->to('/admin/portfolios')->with('error', 'Portfolio item not found.');
+            return redirect()->to('/admin/portfolios')->with('error', 'Portfolio not found.');
         }
 
         $imageFile = $this->request->getFile('image');
@@ -133,6 +133,6 @@ class Portfolio extends BaseController
         }
 
         $this->portfolioModel->delete($id);
-        return redirect()->to('/admin/portfolios')->with('success', 'Portfolio item deleted successfully.');
+        return redirect()->to('/admin/portfolios')->with('success', 'Portfolio deleted successfully.');
     }
 }
