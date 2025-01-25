@@ -279,7 +279,7 @@
       <!-- <a href="index.html" class="logo mr-auto"><img src="<?= base_url('img/icon/enumatech.png') ?>" alt="" class="img-fluid"></a>-->
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="<?= base_url() ?>#hero">Home</a></li>
+          <li><a href="<?= base_url() ?>#hero">Home</a></li>
           <li><a href="<?= base_url() ?>#about">Tentang Kami</a></li>
           <li><a href="<?= base_url() ?>#news">Berita</a></li>
           <li><a href="<?= base_url() ?>#services">Jasa</a></li>
@@ -385,7 +385,7 @@
   <!-- Template Main JS File -->
   <script src="js/main.js"></script><nav class="mobile-nav d-lg-none">
         <ul>
-          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="#about">Tentang Kami</a></li>
           <li><a href="#news">Berita</a></li>
           <li><a href="#services">Jasa</a></li>

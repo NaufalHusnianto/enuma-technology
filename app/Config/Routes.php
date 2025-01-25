@@ -12,6 +12,7 @@ $routes->get('/news', 'Home::newsPage');
 $routes->post('/contact', 'Contact::store');
 $routes->get('/policy', 'Home::policy');
 $routes->get('/about', 'Home::about');
+$routes->get('/service', 'Home::service');
 
 // AUTH
 $routes->get('admin/login', 'Auth::login');

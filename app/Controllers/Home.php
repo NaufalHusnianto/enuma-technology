@@ -62,16 +62,16 @@ class Home extends BaseController
 
     public function policy()
     {
-        $data = [
-            'news' => $this->displayNews,
-        ];
-        return view('pages/policy_page', $data);
+        return view('pages/policy_page');
     }
 
-    public function about(){
-        $data = [
-            'news' => $this->displayNews,
-        ];
-        return view('pages/about_page', $data);
+    public function about()
+    {
+        return view('pages/about_page');
+    }
+
+    public function service()
+    {
+        return view('pages/service_page');
     }
 }

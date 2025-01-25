@@ -117,7 +117,7 @@
       <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
         <div class="icon-box">
           <div class="icon"><i class="bxl--dribbble"></i></div>
-          <h4><a href="">Konsultasi IT</a></h4>
+          <h4><a href="/service">Konsultasi IT</a></h4>
           <p>Menyediakan layanan konsultasi 24 jam terkait dengan IT</p>
         </div>
       </div>
@@ -125,7 +125,7 @@
       <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
         <div class="icon-box">
           <div class="icon"><i class="bx--file"></i></div>
-          <h4><a href="">Perancangan Sistem</a></h4>
+          <h4><a href="/service#system">Perancangan Sistem</a></h4>
           <p>Punya ide untuk membuat sebuah sistem yang kompleks namun terkendala perancangan ? serahkan kepada kami untuk masalah perancangan sistem</p>
         </div>
       </div>
@@ -133,7 +133,7 @@
       <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
         <div class="icon-box">
           <div class="icon"><i class="bx--tachometer"></i></div>
-          <h4><a href="">Pengembangan Produk</a></h4>
+          <h4><a href="/service#dev">Pengembangan Produk</a></h4>
           <p>Berikan rancangan anda, maka akan kami kembangkan produk impian anda</p>
         </div>
       </div>
@@ -141,7 +141,7 @@
       <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
         <div class="icon-box">
           <div class="icon"><i class="bx--layer"></i></div>
-          <h4><a href="">Pengelolaan Produk</a></h4>
+          <h4><a href="/service#manage">Pengelolaan Produk</a></h4>
           <p>Pengelolaan produk meliputi perawatan, peningkatan, dan pemeliharaan</p>
         </div>
       </div>
@@ -156,7 +156,7 @@
   <div class="container aos-init aos-animate" data-aos="fade-up">
 
     <div class="section-title">
-      <h2>Portfolio</h2>
+      <h2>Portofolio</h2>
       <p>Puluhan produk, sistem, dan rancangan telah kami kembangkankan</p>
     </div>
 
