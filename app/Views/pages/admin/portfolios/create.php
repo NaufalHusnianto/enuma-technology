@@ -24,6 +24,16 @@
         </div>
 
         <div class="form-group mt-2">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="app" <?= old('category') == 'app' ? 'selected' : ''; ?>>App</option>
+                <option value="mesin" <?= old('category') == 'mesin' ? 'selected' : ''; ?>>Mesin</option>
+                <option value="web" <?= old('category') == 'web' ? 'selected' : ''; ?>>Web</option>
+            </select>
+        </div>
+
+        <div class="form-group mt-2">
             <label for="image">Display Image</label>
             <input type="file" name="image" id="image" value="<?= old('image'); ?>" class="form-control" required>
         </div>

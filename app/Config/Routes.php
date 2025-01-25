@@ -10,6 +10,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/news', 'Home::newsPage');
 $routes->post('/contact', 'Contact::store');
+$routes->get('/policy', 'Home::policy');
+$routes->get('/about', 'Home::about');
 
 // AUTH
 $routes->get('admin/login', 'Auth::login');
