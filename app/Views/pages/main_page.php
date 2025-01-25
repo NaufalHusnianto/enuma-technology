@@ -16,6 +16,27 @@
             <?php $isActive = false; ?>
         <?php endforeach; ?>
     </div>
+
+    <main id="main">
+
+    <!-- ======= Cliens Section ======= -->
+    <section id="cliens" class="cliens section-bg">
+      <div class="container">
+        OUR CLIENT
+        <div class="row aos-init aos-animate justify-content-center" data-aos="zoom-in">
+        
+        <?php foreach($clients as $client) : ?>
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <a href="<?= $client['link'] ?>">
+              <img src="<?= base_url('uploads/clients/'.$client['image']) ?>" class="img-fluid" alt="">
+            </a>
+          </div>
+        <?php endforeach; ?>
+          
+        </div>
+      </div>
+    </section><!-- End Cliens Section -->
+
     <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden"></span>
@@ -141,23 +162,25 @@
 
         <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" style="position: relative; height: 1646.83px;">
 
-        <?php foreach ($portfolios as $portfolio): ?>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
+            
+            <?php foreach ($portfolios as $portfolio): ?>
             <div class="portfolio-img">
                 <img src="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" class="img-fluid" alt="<?= esc($portfolio['title']); ?>">
             </div>
             <div class="portfolio-info">
-                <h4><?= esc($portfolio['title']); ?></h4>
-                <p><?= esc($portfolio['description']); ?></p>
-                <a href="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="<?= esc($portfolio['title']); ?>">
-                    <i class="bx bx-plus"></i>
-                </a>
-                <a href="<?= base_url('portfolio-details/' . $portfolio['id']); ?>" class="details-link" title="More Details">
-                    <i class="bx bx-link"></i>
-                </a>
+              <h4><?= esc($portfolio['title']); ?></h4>
+              <p><?= esc($portfolio['description']); ?></p>
+              <a href="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="<?= esc($portfolio['title']); ?>">
+                <i class="bx bx-plus"></i>
+              </a>
+              <a href="<?= base_url('portfolio/details/' . $portfolio['id']); ?>" class="details-link" title="More Details">
+                <i class="bx bx-link"></i>
+              </a>
             </div>
-        </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+            
+          </div>
 
         </div>
 

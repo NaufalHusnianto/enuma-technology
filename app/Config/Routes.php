@@ -38,6 +38,7 @@ $routes->group('admin', ['filter' => 'adminauth'], function ($routes) {
 
     // PORTFOLIO
     $routes->get('portfolios', 'Portfolio::index');
+    $routes->get('portfolios/details/(:segment)', 'Portfolio::show/$1');
     $routes->get('portfolios/create', 'Portfolio::create');
     $routes->post('portfolios/store', 'Portfolio::store');
     $routes->get('portfolios/edit/(:segment)', 'Portfolio::edit/$1');
