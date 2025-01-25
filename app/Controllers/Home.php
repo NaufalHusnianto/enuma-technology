@@ -10,11 +10,14 @@ class Home extends BaseController
 {
     protected $clientsModel;
     protected $portfolioModel;
+    protected $displayNews;
 
     function __construct()
     {
         $this->clientsModel = new ClientsModel();
+        $newsModel = new NewsModel();
         $this->portfolioModel = new PortfolioModel();
+        $this->displayNews = $newsModel->orderBy('created_at', 'DESC')->limit(6)->findAll();
     }
 
     public function index(): string
@@ -22,17 +25,14 @@ class Home extends BaseController
         $clients = $this->clientsModel
             ->orderBy('created_at', 'ASC')
             ->findAll();
-
-        $newsModel = new NewsModel();
         
         $portfolios = $this->portfolioModel
             ->orderBy('created_at', 'DESC')
-            ->limit(3)
             ->findAll();
 
         $data = [
             'clients' => $clients,
-            'news' => $newsModel->orderBy('created_at', 'DESC')->limit(6)->findAll(),
+            'news' => $this->displayNews,
             'portfolios' => $portfolios,
         ];    
         return view('pages/main_page', $data);
@@ -43,7 +43,7 @@ class Home extends BaseController
         $newsModel = new NewsModel();
 
         $data = [
-            'news' => $newsModel->orderBy('created_at', 'DESC')->limit(6)->findAll(),
+            'news' => $this->displayNews,
         ];
 
         return view('pages/news_page', $data);
@@ -58,5 +58,20 @@ class Home extends BaseController
         ];
 
         return view('pages/detail_news_page', $data);
+    }
+
+    public function policy()
+    {
+        $data = [
+            'news' => $this->displayNews,
+        ];
+        return view('pages/policy_page', $data);
+    }
+
+    public function about(){
+        $data = [
+            'news' => $this->displayNews,
+        ];
+        return view('pages/about_page', $data);
     }
 }

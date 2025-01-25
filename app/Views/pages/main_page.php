@@ -19,24 +19,6 @@
 
     <main id="main">
 
-    <!-- ======= Cliens Section ======= -->
-    <section id="cliens" class="cliens section-bg">
-      <div class="container">
-        OUR CLIENT
-        <div class="row aos-init aos-animate justify-content-center" data-aos="zoom-in">
-        
-        <?php foreach($clients as $client) : ?>
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <a href="<?= $client['link'] ?>">
-              <img src="<?= base_url('uploads/clients/'.$client['image']) ?>" class="img-fluid" alt="">
-            </a>
-          </div>
-        <?php endforeach; ?>
-          
-        </div>
-      </div>
-    </section><!-- End Cliens Section -->
-
     <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden"></span>
@@ -46,6 +28,24 @@
         <span class="visually-hidden"></span>
     </button>
 </div>
+
+<!-- ======= Cliens Section ======= -->
+<section id="cliens" class="cliens section-bg">
+  <div class="container">
+    OUR CLIENT
+    <div class="row aos-init aos-animate justify-content-center" data-aos="zoom-in">
+    
+    <?php foreach($clients as $client) : ?>
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <a href="<?= $client['link'] ?>">
+          <img src="<?= base_url('uploads/clients/'.$client['image']) ?>" class="img-fluid" alt="">
+        </a>
+      </div>
+    <?php endforeach; ?>
+      
+    </div>
+  </div>
+</section><!-- End Cliens Section -->
 
 <!-- ======= About Us Section ======= -->
 <section id="about" class="about">
@@ -72,7 +72,7 @@
         <p>
           Tim kami terdiri dari berbagai macam bidang IT mulai dari multimedia, jaringan, pemrograman, dan robotika. Kombinasi dari keempat bidang tersebut membuat perusahaan kami siap untuk membantu anda mewujudkan produk impian anda. Mulai dari perancangan hingga pada pengelolaan produk dapat anda serahkan kepada kami
         </p>
-        <a href="https://enumatechnology.com/about.html" class="btn-learn-more">Pelajari lanjut</a>
+        <a href="/about" class="btn-learn-more">Pelajari lanjut</a>
       </div>
     </div>
 
@@ -151,41 +151,65 @@
   </div>
 </section><!-- End Services Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container aos-init aos-animate" data-aos="fade-up">
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Puluhan produk, sistem, dan rancangan telah kami kembangkankan</p>
-        </div>
+    <div class="section-title">
+      <h2>Portfolio</h2>
+      <p>Puluhan produk, sistem, dan rancangan telah kami kembangkankan</p>
+    </div>
 
-        <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" style="position: relative; height: 1646.83px;">
+    <!-- Portfolio Filters -->
+    <ul id="portfolio-flters" class="d-flex justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+      <li data-filter="*" class="filter-active">All</li>
+      <li data-filter=".filter-app">App</li>
+      <li data-filter=".filter-mesin">Mesin</li>
+      <li data-filter=".filter-web">Web</li>
+    </ul>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
-            
-            <?php foreach ($portfolios as $portfolio): ?>
-            <div class="portfolio-img">
-                <img src="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" class="img-fluid" alt="<?= esc($portfolio['title']); ?>">
-            </div>
-            <div class="portfolio-info">
-              <h4><?= esc($portfolio['title']); ?></h4>
-              <p><?= esc($portfolio['description']); ?></p>
-              <a href="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="<?= esc($portfolio['title']); ?>">
-                <i class="bx bx-plus"></i>
-              </a>
-              <a href="<?= base_url('portfolio/details/' . $portfolio['id']); ?>" class="details-link" title="More Details">
-                <i class="bx bx-link"></i>
-              </a>
-            </div>
-            <?php endforeach; ?>
-            
+    <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+      <?php foreach ($portfolios as $portfolio): ?>
+        <div class="col-lg-3 col-md-5 portfolio-item filter-<?= esc($portfolio['category']); ?>">
+          <div class="portfolio-img">
+            <img src="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" class="img-fluid" alt="<?= esc($portfolio['title']); ?>">
           </div>
-
+          <div class="portfolio-info">
+            <h4><?= esc($portfolio['title']); ?></h4>
+            <p><?= esc($portfolio['description']); ?></p>
+            <a href="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" data-gall="portfolioGallery" class="venobox preview-link vbox-item" title="<?= esc($portfolio['title']); ?>">
+              <i class="bx bx-plus"></i>
+            </a>
+            <a href="#" class="details-link" data-bs-toggle="modal" data-bs-target="#portfolioModal<?= $portfolio['id']; ?>" title="More Details">
+              <i class="bx bx-link"></i>
+            </a>
+          </div>
         </div>
 
-      </div>
-    </section><!-- End Portfolio Section -->
+        <!-- Portfolio Modal -->
+        <div class="modal fade" id="portfolioModal<?= $portfolio['id']; ?>" tabindex="-1" aria-labelledby="portfolioModalLabel<?= $portfolio['id']; ?>" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="portfolioModalLabel<?= $portfolio['id']; ?>"><?= esc($portfolio['title']); ?></h5>
+                <button type="button" class="btn btn-danger btn-sm align-items-center" data-bs-dismiss="modal" aria-label="Close">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <img src="<?= base_url('uploads/portfolios/' . $portfolio['image']); ?>" class="img-fluid mb-4 col-6" style="height: auto" alt="<?= esc($portfolio['title']); ?>">
+                  <p class="col-6"><?= esc($portfolio['description']); ?></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+  </div>
+</section><!-- End Portfolio Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">

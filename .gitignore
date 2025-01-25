@@ -130,4 +130,5 @@ nb-configuration.xml
 #-------------------------
 /public/uploads/news/*
 /public/uploads/clients/*
+/public/uploads/portfolios/*
 !/public/upload/.gitignore

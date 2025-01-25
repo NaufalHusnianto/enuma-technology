@@ -45,6 +45,7 @@ class Portfolio extends BaseController
             'title' => 'required',
             'image' => 'uploaded[image]|is_image[image]|max_size[image,2048]',
             'description' => 'required',
+            'category' => 'required',
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -62,6 +63,7 @@ class Portfolio extends BaseController
         $data = [
             'title' => $this->request->getPost('title'),
             'description' => $this->request->getPost('description'),
+            'category' => $this->request->getPost('category'),
             'image' => $imageName,
             'created_at' => date('Y-m-d H:i:s'),
         ];
@@ -89,31 +91,32 @@ class Portfolio extends BaseController
         if (!$portfolio) {
             return redirect()->to('/admin/portfolios')->with('error', 'Portfolio not found.');
         }
-
+    
         $imageFile = $this->request->getFile('image');
         $imageName = $portfolio['image'];
-
+    
         if ($imageFile->isValid() && !$imageFile->hasMoved()) {
             $newImageName = $imageFile->getRandomName();
             $imageFile->move('uploads/portfolios', $newImageName);
-
+    
             if (!empty($portfolio['image'])) {
                 $oldImagePath = 'uploads/portfolios/' . $portfolio['image'];
                 if (file_exists($oldImagePath)) {
                     unlink($oldImagePath);
                 }
             }
-
+    
             $imageName = $newImageName;
         }
-
+    
         $data = [
             'title' => $this->request->getPost('title'),
             'description' => $this->request->getPost('description'),
+            'category' => $this->request->getPost('category'),
             'image' => $imageName,
             'updated_at' => date('Y-m-d H:i:s'),
         ];
-
+    
         if ($this->portfolioModel->update($id, $data)) {
             return redirect()->to('/admin/portfolios')->with('success', 'Portfolio updated successfully.');
         } else {

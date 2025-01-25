@@ -315,26 +315,27 @@
             </p>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-6 col-md-6 text-center footer-links pr-5">
             <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx--chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#about">Tentang Kami</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#services">Jasa</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#">Kebijakan Layanan</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#">Kebijakan Privasi</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Jasa Kami</h4>
-            <ul>
-              <li><i class="bx--chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#">IoT Development</a></li>
-              <li><i class="bx--chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
+            <div class="row">
+              <!-- Column 1 -->
+              <div class="col-lg-6 col-md-6">
+                <ul class="d-flex flex-column align-items-start">
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/#about">Tentang Kami</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/#services">Jasa</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/news">Berita</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/#contact">Kontak</a></li>
+                </ul>
+              </div>
+              <!-- Column 2 -->
+              <div class="col-lg-6 col-md-6">
+                <ul class="d-flex flex-column align-items-start">
+                  <li><i class="bx bx-chevron-right"></i> <a href="/policy#tos">Kebijakan Layanan</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/policy#privacy">Kebijakan Privasi</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">

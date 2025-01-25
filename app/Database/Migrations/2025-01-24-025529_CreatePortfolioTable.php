@@ -19,6 +19,10 @@ class CreatePortfolioTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'category' => [
+                'type'       => 'ENUM',
+                'constraint' => ['app', 'mesin', 'web'],
+            ],
             'description' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
@@ -38,11 +42,11 @@ class CreatePortfolioTable extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('portofolios');
+        $this->forge->createTable('portfolios');
     }
 
     public function down()
     {
-        $this->forge->dropTable('portofolios');
+        $this->forge->dropTable('portfolios');
     }
 }
